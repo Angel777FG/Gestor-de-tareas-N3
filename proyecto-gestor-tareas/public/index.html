@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Tareas Colaborativas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-grid"></div>
+    <div class="container">
+
+        <div class="header">
+            <div class="badge">
+                <span class="badge-dot"></span>
+                Node.js + Express
+            </div>
+            <h1>Gestor de <span>Tareas</span></h1>
+            <p class="subtitulo">Programación Web — Soluciones Ágiles Ltda.</p>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-bar">
+            <div class="stat-card">
+                <span class="stat-label">Total</span>
+                <span class="stat-value" id="statTotal">0</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Pendientes</span>
+                <span class="stat-value" id="statPendientes">0</span>
+            </div>
+            <div class="stat-card accent-card">
+                <span class="stat-label">Completadas</span>
+                <span class="stat-value" id="statCompletadas">0</span>
+            </div>
+        </div>
+
+        <!-- Formulario -->
+        <div class="panel">
+            <p class="panel-title">Nueva tarea</p>
+            <div class="formulario">
+                <input
+                    type="text"
+                    id="nuevaTarea"
+                    placeholder="¿Qué hay que hacer?"
+                    maxlength="100"
+                    autocomplete="off"
+                >
+                <button id="btnAgregar">+ Agregar</button>
+            </div>
+            <div id="mensajeError" class="error-mensaje">
+                <span>⚠</span>
+                <span id="mensajeErrorTexto"></span>
+            </div>
+        </div>
+
+        <!-- Lista -->
+        <div class="panel">
+            <div class="section-header">
+                <span class="section-title">Mis tareas</span>
+                <div class="filter-pills">
+                    <button class="pill active" data-filter="todas">Todas</button>
+                    <button class="pill" data-filter="pendientes">Pendientes</button>
+                    <button class="pill" data-filter="completadas">Completadas</button>
+                </div>
+            </div>
+            <ul id="listaTareas" class="lista-tareas">
+                <li class="cargando">Cargando tareas...</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
